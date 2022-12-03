@@ -1,0 +1,62 @@
+<!-- <div class="container" style="margin-top:-16px">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a [routerLink]="['/home']">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Privacy Policy</li>
+        </ol>
+      </nav>
+</div> -->
+<div class="container-fluid bg-g" style="margin-top:16px">
+    <div id="main-wrapper" class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-10">
+                <div class="card border-0">
+                    <div class="card-body p-0">
+                        <div class="row no-gutters ">
+                            <div class="col-lg-12">
+                                <div class="p-5 pade">
+                                    <h6 class="h5 mb-0">Connexion</h6>
+                                    <form>
+                                        <div  class="form-group mb-1">
+                                            <label for="exampleInputEmail1">Identifiant</label>
+                                            <input type="text" [(ngModel)]="email" name="email" class="form-control" id="exampleInputEmail1" />
+                                        </div>
+
+
+
+
+
+                                        <div class="col-lg-12" style="background-color: white;">
+                                            <label for="exampleInputEmail1">Mot de passe</label>
+                                            <div class="input-group mb-1 mt-2">
+                                                <input [type]="showo ? 'text' : 'password'" [(ngModel)]="password" name="opassword" class="form-control" id="exampleInputPassword1" />
+                                                <span (click)="passwordo()" class="hand input-group-text">{{showo ? 'Cacher' : 'Voir'}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-check mb-3">
+                                      
+                                            
+                                        </div>
+                                        <button  (click)="login()" type="btn" class="btn btn-primary">Connexion</button>
+                                    </form>
+                                        <!-- end card -->
+                                       <!--  <p class="text-muted text-center mt-3 mb-0">Mot de passe perdu ? <a [routerLink]="['/recupreation']" class="text-primary ml-1">Recupérez-le maintenant</a></p> -->
+                                        <!-- end row -->
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end card-body -->
+                </div>
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- Row -->
+    </div>
+</div>
+
+<ngx-loading
+[show]="loading"
+[config]="{ backdropBorderRadius: '3px' }"
+></ngx-loading>

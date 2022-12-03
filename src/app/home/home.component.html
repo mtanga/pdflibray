@@ -1,0 +1,59 @@
+
+
+<div class="page">
+    <nav >
+        <button (click)="logout()" class="previous">
+            Déconnexion
+          </button>
+      <button (click)="print()" class="previous">
+        Imprimer
+      </button>
+      <button (click)="prevPage()" [disabled]="page === 1" class="previous">
+        Prev
+      </button>
+      <button (click)="nextPage()" [disabled]="page === totalPages" class="next">
+        Next
+      </button>
+      <p>{{ page }} / {{ totalPages }}</p>
+    </nav>
+    <div class="pdf-container">
+        <pdf-viewer
+        [src]="pdfSrc"
+        [original-size]="true"
+        [render-text]="true"
+        [rotation]="0"
+        [show-all]="false"
+        [fit-to-page]="true"
+        [zoom]="1"
+        [zoom-scale]="'page-width'"
+        [stick-to-page]="true"
+        [external-link-target]="'blank'"
+        [autoresize]="true"
+        [show-borders]="false"
+        class="pdf-viewer"
+        [page]="page"
+        (after-load-complete)="onLoaded($event)"
+        class="pdf-viewer"
+        style="width: 1200px; height: 800px"
+        ></pdf-viewer>
+    </div> 
+  </div>
+
+
+
+
+<!-- <button (click)="print()" class="w-25 btn btn-primary btn-lg" type="button">Impimer</button>
+
+<div class="pdf-container">
+    <pdf-viewer class="mypdf" [src]="pdfSrc"
+    [render-text]="true"
+    [original-size]="false"
+    [zoom]="1"
+    [page]="page"
+    (after-load-complete)="onLoaded($event)"
+    style="width: 1200px; height: 800px"
+    ></pdf-viewer>
+  </div> -->
+
+
+
